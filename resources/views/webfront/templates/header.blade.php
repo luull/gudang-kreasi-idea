@@ -39,11 +39,23 @@
                       </ul>
                   </li>
                   <li><a href="/team">Editorial Team</a></li>
-                  <li><a href="{{ session('link_jurnal') }} ?? "#"" target="_blank">Jurnal</a></li>
+                 <li>
+  <?php if (empty(session('link_jurnal'))) : ?>
+    <a href="#">Jurnal</a>
+  <?php else : ?>
+    <a href="{{ session('link_jurnal') }}" target="_blank">Jurnal</a>
+  <?php endif; ?>
+</li>
                   <li class="dropdown"><a href="#"><span>Katalog Buku</span> <i
                               class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
-                          <li><a href="{{ session('link_katalog') ?? "#" }}" target="_blank">Katalog</a></li>
+                         <li>
+  <?php if (empty(session('link_katalog'))) : ?>
+    <a href="#">Katalog</a>
+  <?php else : ?>
+    <a href="{{ session('link_katalog') }}" target="_blank">Katalog</a>
+  <?php endif; ?>
+</li>
                           <li><a href="/katalog">Book Store</a></li>
                       </ul>
                   </li>
